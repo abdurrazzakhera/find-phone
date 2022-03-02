@@ -18,6 +18,7 @@ const loadPhone = (phones) => {
   const phoneResutl = document.getElementById("phone-result");
   phoneResutl.textContent = "";
   const errorDiv = document.getElementById("error-div");
+  const phoneDisplay = document.getElementById("phone-details");
   //error message show
 
   if (phones.length == 0) {
@@ -27,8 +28,8 @@ const loadPhone = (phones) => {
     <h3 class="text-center">No Phones are found</h3>
     `;
     // singel phone div clea
-    const phoneDisplay = document.getElementById("phone-details");
-    phoneDisplay.innerHTML = "";
+
+    phoneDisplay.textContent = "";
   }
   for (const phone of phones.slice(0, 20)) {
     // console.log(phone);
@@ -48,6 +49,7 @@ const loadPhone = (phones) => {
       `;
     phoneResutl.appendChild(div);
     errorDiv.textContent = "";
+    phoneDisplay.textContent = "";
   }
 };
 
@@ -63,7 +65,7 @@ const moreDetails = (details) => {
 const displayPhone = (phoneDetails) => {
   console.log(phoneDetails);
   const phoneDisplay = document.getElementById("phone-details");
-  phoneDisplay.innerHTML = "";
+  phoneDisplay.textContent = "";
   const div = document.createElement("div");
   div.classList.add("card");
   div.classList.add("mb-2");
