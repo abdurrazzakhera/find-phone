@@ -52,15 +52,51 @@ const displayPhone = (phoneDetails) => {
   phoneDisplay.innerHTML = "";
   const div = document.createElement("div");
   div.classList.add("card");
+  div.classList.add("mb-2");
   div.innerHTML = `
-  <img src="${phoneDetails.image}" class="card-img-top img-size mx-auto mt-2" alt="..." />
+  <img src="${
+    phoneDetails.image
+  }" class="card-img-top img-size mx-auto mt-2" alt="..." />
   <div class="card-body">
     <h5 class="card-title">${phoneDetails.name}</h5>
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the
-      bulk of the card's content.
-    </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h3><span class="text-primary">Status : </span> ${
+      phoneDetails.releaseDate
+        ? phoneDetails.releaseDate
+        : "<span class='text-danger'>Comming Soon</span>"
+    }</h3>
+    <p class="card-text"><span class="text-primary">Proccessor</span>  : ${
+      phoneDetails.mainFeatures.chipSet
+    }</p>
+    <p class="card-text"><span class="text-primary">Display Size</span> : ${
+      phoneDetails.mainFeatures.displaySize
+    }</p>
+    <p class="card-text"><span class="text-primary">Memory</span>       :${
+      phoneDetails.mainFeatures.memory
+    }</p>
+    <p class="card-text"><span class="text-primary">Sensors</span>      :${
+      phoneDetails.mainFeatures.sensors
+    }</p>
+    <p class="card-text"><span class="text-primary">Storage</span>      : ${
+      phoneDetails.mainFeatures.storage
+    }</p>
+    <p class="card-text"><span class="text-primary">Bluethooth</span>   : ${
+      phoneDetails.others.Bluetooth
+    }</p>
+    <p class="card-text"><span class="text-primary">Gps</span>          : ${
+      phoneDetails.others.GPS
+    }</p>
+    <p class="card-text"><span class="text-primary">NFC</span>          : ${
+      phoneDetails.others.NFC
+    }</p>
+    <p class="card-text"><span class="text-primary">Radio</span>        : ${
+      phoneDetails.others.Radio
+    }</p>
+    <p class="card-text"><span class="text-primary">USB</span>          : ${
+      phoneDetails.others.USB
+    }</p>
+    <p class="card-text"><span class="text-primary">WLAN</span>         : ${
+      phoneDetails.others.WLAN
+    }</p>
   </div>
   `;
   phoneDisplay.appendChild(div);
