@@ -26,6 +26,9 @@ const loadPhone = (phones) => {
     errorDiv.innerHTML = `
     <h3 class="text-center">No Phones are found</h3>
     `;
+    // singel phone div clea
+    const phoneDisplay = document.getElementById("phone-details");
+    phoneDisplay.innerHTML = "";
   }
   for (const phone of phones.slice(0, 20)) {
     // console.log(phone);
