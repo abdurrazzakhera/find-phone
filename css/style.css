@@ -1,3 +1,10 @@
+.head-section {
+  background-color: #616161;
+  color: white;
+}
+.head-section h1 {
+  font-family: cursive;
+}
 .img-size {
   width: 142px;
   height: 189px;
