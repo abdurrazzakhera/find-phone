@@ -17,6 +17,16 @@ const searchButton = () => {
 const loadPhone = (phones) => {
   const phoneResutl = document.getElementById("phone-result");
   phoneResutl.textContent = "";
+  const errorDiv = document.getElementById("error-div");
+  //error message show
+
+  if (phones.length == 0) {
+    console.log("no phone found");
+
+    errorDiv.innerHTML = `
+    <h3 class="text-center">No Phones are found</h3>
+    `;
+  }
   for (const phone of phones.slice(0, 20)) {
     // console.log(phone);
     const div = document.createElement("div");
@@ -34,6 +44,7 @@ const loadPhone = (phones) => {
             </div>
       `;
     phoneResutl.appendChild(div);
+    errorDiv.textContent = "";
   }
 };
 
@@ -56,9 +67,11 @@ const displayPhone = (phoneDetails) => {
   div.innerHTML = `
   <img src="${
     phoneDetails.image
-  }" class="card-img-top img-size mx-auto mt-2" alt="..." />
+  }" class="card-img-top img-size mx-auto mt-2 single-phone-img" alt="..." />
   <div class="card-body">
-    <h5 class="card-title">${phoneDetails.name}</h5>
+    <h5 class="card-title"><span class="text-primary">Model Name : </span>${
+      phoneDetails.name
+    }</h5>
     <h3><span class="text-primary">Status : </span> ${
       phoneDetails.releaseDate
         ? phoneDetails.releaseDate
@@ -70,31 +83,31 @@ const displayPhone = (phoneDetails) => {
     <p class="card-text"><span class="text-primary">Display Size</span> : ${
       phoneDetails.mainFeatures.displaySize
     }</p>
-    <p class="card-text"><span class="text-primary">Memory</span>       :${
+    <p class="card-text"><span class="text-primary">Memory</span> : ${
       phoneDetails.mainFeatures.memory
     }</p>
-    <p class="card-text"><span class="text-primary">Sensors</span>      :${
+    <p class="card-text"><span class="text-primary">Sensors</span> : ${
       phoneDetails.mainFeatures.sensors
     }</p>
-    <p class="card-text"><span class="text-primary">Storage</span>      : ${
+    <p class="card-text"><span class="text-primary">Storage</span> : ${
       phoneDetails.mainFeatures.storage
     }</p>
-    <p class="card-text"><span class="text-primary">Bluethooth</span>   : ${
+    <p class="card-text"><span class="text-primary">Bluethooth</span> : ${
       phoneDetails.others.Bluetooth
     }</p>
-    <p class="card-text"><span class="text-primary">Gps</span>          : ${
+    <p class="card-text"><span class="text-primary">Gps</span> : ${
       phoneDetails.others.GPS
     }</p>
-    <p class="card-text"><span class="text-primary">NFC</span>          : ${
+    <p class="card-text"><span class="text-primary">NFC</span> : ${
       phoneDetails.others.NFC
     }</p>
-    <p class="card-text"><span class="text-primary">Radio</span>        : ${
+    <p class="card-text"><span class="text-primary">Radio</span> : ${
       phoneDetails.others.Radio
     }</p>
-    <p class="card-text"><span class="text-primary">USB</span>          : ${
+    <p class="card-text"><span class="text-primary">USB</span> : ${
       phoneDetails.others.USB
     }</p>
-    <p class="card-text"><span class="text-primary">WLAN</span>         : ${
+    <p class="card-text"><span class="text-primary">WLAN</span> : ${
       phoneDetails.others.WLAN
     }</p>
   </div>
