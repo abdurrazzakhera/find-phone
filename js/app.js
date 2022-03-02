@@ -67,7 +67,7 @@ const displayPhone = (phoneDetails) => {
   div.innerHTML = `
   <img src="${
     phoneDetails.image
-  }" class="card-img-top img-size mx-auto mt-2 single-phone-img" alt="..." />
+  }" class="card-img-top img-size mx-auto mt-2 img-fluid single-phone-img" alt="..." />
   <div class="card-body">
     <h5 class="card-title"><span class="text-primary">Model Name : </span>${
       phoneDetails.name
